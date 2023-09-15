@@ -21,9 +21,9 @@ jobs:
           extended: true
       - name: Build
         run: hugo --minify
-      - name: Upload userscript
+      - name: Upload to S3
         run: |
-          aws s3 sync public s3://glasket.com --exclude "pog.user.js" --delete --profile glasket
+          aws s3 sync public s3://glasket.com --exclude "pog.user.js" --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
