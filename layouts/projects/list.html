@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ range .Pages.ByLinkTitle }}
+    <div class="post-card">
+      <h3><a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <!-- Put Technology listing, and brief summary -->
+      <div class="tag-list">
+        {{ $tagLen := sub (len .Params.tags) 1 }}
+        {{ range $idx, $tag := .Params.tags }}
+          <span>{{$tag}}{{if not (eq $idx $tagLen)}},{{end}}</span>
+        {{end}}
+      </div>
+      <p>{{ .Summary }}</p>
+    </div>
+  {{ end }}
+{{ end }}

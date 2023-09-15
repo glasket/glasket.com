@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="row">
+  <h1>{{ .Title }}</h1>
+  {{ if .Params.github }}
+  <a class="github" href="{{ .Params.github }}"><img height="32" width="32" src="/github.png" /></a>
+  {{ end }}
+</div>
+  {{ .Content }}
+{{ end }}

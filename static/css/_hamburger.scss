@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "colors";
+$hb-dim: 2.8rem;
+$hb-bar-height: 0.6rem;
+$hb-bar-shift: math.div($hb-dim, 2) - 0.3rem;
+
+.hamburger {
+  display: none;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+
+    height: $hb-dim;
+    width: $hb-dim;
+
+    > span {
+      display: block;
+      width: 100%;
+      height: $hb-bar-height;
+      background-color: $fg;
+      border-radius: 3px;
+      line-height: 1;
+
+      transition: transform 0.3s ease-in, opacity 0.3s ease;
+      transform-origin: 50% 50%;
+    }
+  }
+
+  &:checked {
+    ~ .hamburger__container {
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:nth-child(1) {
+        transform: translate3d(0, $hb-bar-shift, 0) rotate3d(0, 0, 1, 45deg);
+      }
+      > span:nth-child(3) {
+        transform: translate3d(0, -$hb-bar-shift, 0) rotate3d(0, 0, -1, 45deg);
+      }
+    }
+  }
+}

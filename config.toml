@@ -1,0 +1,47 @@
+baseURL = 'https://glasket.com/'
+languageCode = 'en-us'
+title = 'Glasket'
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 2
+[[menu.main]]
+name = "Misc"
+url = "/misc"
+weight = 3
+[[menu.social]]
+name = "email"
+url = "mailto:cws@glasket.com"
+title = "cws@glasket.com"
+weight = 1
+[[menu.social]]
+name = "github"
+url = "https://github.com/glasket"
+title = "glasket"
+weight = 2
+[[menu.social]]
+name = "reddit"
+url = "https://reddit.com/user/glasket_"
+title = "glasket_"
+weight = 3
+[[menu.social]]
+name = "twitter"
+url = "https://twitter.com/glasket_"
+title = "@glasket_"
+weight = 4
+[[menu.social]]
+name = "résumé"
+url = "/resume.pdf"
+title = "link"
+weight = 9
+
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

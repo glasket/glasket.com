@@ -1,0 +1,20 @@
+<div class="header">
+  <input type="checkbox" id="hamburger" class="hamburger" />
+  <label for="hamburger" class="hamburger__container">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <nav class="nav">
+    {{ range .Site.Menus.main }}
+      <a class="nav__link" href="{{ .URL }}">
+        {{ if .Pre }}
+          <span class="material-symbols-outlined">{{ .Pre }}</span>
+        {{ end }}
+
+        {{ $text := print .Name | safeHTML }}
+        {{ $text }}
+      </a>
+    {{ end }}
+  </nav>
+</div>

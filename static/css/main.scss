@@ -1,0 +1,244 @@
+@use "sass:color";
+@import "colors";
+@import "reset";
+@import "hamburger";
+
+@font-face {
+  font-family: "Unscii";
+  src: url("/fonts/unscii-16.woff");
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$h-body-pad: 2.4rem;
+$v-body-pad: 1.2rem;
+
+$root-font-size: 1.6rem;
+
+:root {
+  font-size: 62.5%;
+  font-family: "Montserrat";
+  font-synthesis: style;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $bg;
+  color: $fg;
+  font-size: $root-font-size;
+  margin: 0 auto;
+  padding: $v-body-pad $h-body-pad;
+  max-width: 896px;
+  min-height: 100dvh;
+}
+
+time {
+  display: block;
+}
+
+hr {
+  color: $fg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Unscii";
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: $pink-light;
+  text-decoration: none;
+
+  &:hover {
+    color: $pink-dark;
+  }
+
+  &:visited {
+    color: $blue-dark;
+
+    &:hover {
+      color: $pink-dark;
+    }
+  }
+}
+
+ul ul {
+  margin-left: 0.8rem;
+  list-style-type: none;
+  margin-top: 0.6rem;
+}
+
+li {
+  margin-top: 0.8rem;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  top: $v-body-pad;
+  right: $h-body-pad;
+
+  @media screen and (min-width: 481px) {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 1.2rem;
+
+    > *:not(:last-child) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #content {
+    margin-top: calc(1.2rem + $hb-dim);
+  }
+}
+
+#hamburger {
+  display: none;
+  &:checked ~ .nav {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.6rem;
+
+  &__link {
+    font-size: 1.5em;
+    font-family: "Unscii";
+  }
+
+  @media screen and (max-width: 480px) {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-trans;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.8rem;
+
+  @media screen and (min-width: 481px) {
+    float: right;
+  }
+  @media screen and (max-width: 480px) {
+    float: none;
+  }
+
+  img {
+    display: block;
+    border-radius: 16px;
+    aspect-ratio: 1/1;
+    max-width: 160px;
+    width: 45vw;
+    height: auto;
+  }
+
+  &__links {
+    display: grid;
+    @media screen and (min-width: 321px) {
+      grid-template-columns: auto 1fr;
+      row-gap: 0.6rem;
+    }
+    @media screen and (max-width: 320px) {
+      grid-template-rows: auto;
+      &:nth-child(2n + 1) {
+        margin-right: auto;
+      }
+      &n:nth-child(2n) {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 1.6rem;
+  text-align: center;
+}
+
+p:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.post {
+  &-card {
+    padding: 1.2rem 0;
+
+    & > *:first-child {
+      margin-bottom: 0.6rem;
+    }
+  }
+  &-title {
+    text-decoration: underline;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.tag-list {
+  margin: 0 0 0.3rem 0.8rem;
+  font-style: italic;
+  font-family: "Unscii";
+}
+
+.github {
+  height: calc(1.6rem * 2);
+  width: calc(1.6rem * 2);
+  margin-left: 1.2rem;
+}
+
+.github:hover {
+  filter: brightness(0.8);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+}

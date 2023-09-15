@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "prettier.prettierPath": "./node_modules/prettier/index.cjs"
+  }
+}
