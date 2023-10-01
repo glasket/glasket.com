@@ -6,6 +6,12 @@
       "options": {
         "parser": "go-template"
       }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "proseWrap": "always"
+      }
     }
   ],
   "goTemplateBracketSpacing": true
