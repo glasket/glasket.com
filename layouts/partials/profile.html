@@ -8,11 +8,11 @@
       height="{{ $profile_image.Height }}"
   /></a>
   <dl class="profile__links">
-    {{ range .Site.Menus.social}}
+    {{ range .Site.Menus.social }}
       {{ $name := print .Name | safeHTML }}
       {{ $display := print .Title | safeHTML }}
-    <dt>{{ $name }}</dt>
-    <dd><a href="{{ .URL }}">{{ $display }}</a></dd>
+      <dt>{{ $name }}</dt>
+      <dd><a href="{{ .URL }}">{{ $display }}</a></dd>
     {{ end }}
   </dl>
 </aside>

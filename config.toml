@@ -45,3 +45,11 @@ weight = 9
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+[markup.highlight]
+lineNos = false
+lineNumbersInTable = true
+codeFences = true
+guessSyntax = false
+hl_inline = false
+style = 'rose-pine-moon'
+tabWidth = 2
